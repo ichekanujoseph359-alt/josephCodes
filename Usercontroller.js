@@ -12,6 +12,18 @@ const saveToDB = (data) => {
         })
     })
 }
+const logData=(data)=>{
+    return new Promise((resolve,reject)=>{
+        fs.appendFile('./logger.txt',data,(err,data)=>{
+            if(err){
+                reject(err)
+            }else{
+                resolve('file added')
+            }
+        })
+
+    })
+}
 
 
 
@@ -42,19 +54,9 @@ const newUser = async (req, res) => {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 module.exports = {
     allUser,
-    newUser
+    newUser,
+    saveToDB,
+    logData
 }

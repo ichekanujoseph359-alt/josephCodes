@@ -2,11 +2,11 @@ const express = require("express")
 
 const app = express();
 
-const route = require("./Routes")
+const router = require("./Routes")
 
 app.use(express.json())
 
-app.use(route)
+app.use(router)
 
 app.listen(2000, ()=> {
     console.log("server is running on PORT:2000")
